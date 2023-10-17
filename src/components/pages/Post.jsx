@@ -17,8 +17,7 @@ function Post() {
     if (slug) {
       service.getPost(slug).then((post) => {
         if (post) {
-          setPost(post);
-      
+          setPost(post);     
         } else navigate("/");
       });
     } else navigate("/");

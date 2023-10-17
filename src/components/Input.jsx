@@ -11,5 +11,4 @@ const Input = forwardRef(function Input({ label, type = '', className = '', ...p
     )
 })
 
-
 export default Input
