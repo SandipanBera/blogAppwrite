@@ -22,6 +22,7 @@ function Post() {
       });
     } else navigate("/");
   }, [slug, navigate]);
+  
   const deletePost = () => {
     service.deletePost(post.$id).then((response) => {
       if (response) {
@@ -40,9 +41,7 @@ function Post() {
             alt={post.title}
             className="rounded-xl"
           />
-
-          {isAuthor && (
-            <div className="absolute right-6 top-6">
+           { isAuthor && (<div className="absolute right-6 top-6">
               <Link to={`/edit-post/${post.$id}`}>
                 <Button bgColor="bg-green-500" className="mr-3">
                   Edit
@@ -51,8 +50,7 @@ function Post() {
               <Button bgColor="bg-red-500" onClick={deletePost}>
                 Delete
               </Button>
-            </div>
-          )}
+            </div>)}     
         </div>
         <div className="w-full mb-6">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
