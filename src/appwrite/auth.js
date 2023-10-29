@@ -9,6 +9,9 @@ export class AuthService {
       .setProject(conf.appWriteProjectId); //  project ID
     this.account = new Account(this.client);
   }
+   handleError(error) {
+    console.log(error);
+  }
   async createAccount({ email, password, name }) {
     try {
       const userAccount = await this.account.create(
@@ -23,14 +26,15 @@ export class AuthService {
         return userAccount;
       }
     } catch (error) {
-      throw error;
+      this.handleError(error);
     }
   }
   async login({ email, password }) {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
-      throw error;
+      this.handleError(error)
+ 
     }
   }
   async getCurrentUser() {
