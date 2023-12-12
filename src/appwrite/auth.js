@@ -33,8 +33,7 @@ export class AuthService {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
-      this.handleError(error)
- 
+      console.log(error);
     }
   }
   async getCurrentUser() {
