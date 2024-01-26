@@ -55,7 +55,7 @@ function Post() {
         <div className="w-full mb-6">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
-                <div className="browser-css text-fuchsia-300">
+                <div className="browser-css text-white">
                     {parse(post.content)}
                     </div>
             </Container>
