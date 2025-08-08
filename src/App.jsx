@@ -32,7 +32,7 @@ function App() {
   Loading...
 </button></div>) : (
     <div className="min-h-screen flex flex-wrap content-between  bg-slate-500">
-      <div className="w-full block">
+      <div className="w-full  block">
         <Header />
       <main><Outlet/></main>
         <Footer />
